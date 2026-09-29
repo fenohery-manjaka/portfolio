@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#e8e0d0"/>
+  <g fill="none" stroke="#1d1b17" stroke-width="1.5">
+    <rect x="84" y="84" width="1032" height="662" fill="#f2ede3"/>
+    <line x1="84" y1="118" x2="1116" y2="118"/>
+  </g>
+  <g fill="none" stroke="#1d1b17" stroke-width="1.2">
+    <circle cx="102" cy="101" r="5"/><circle cx="120" cy="101" r="5"/><circle cx="138" cy="101" r="5"/>
+  </g>
+  <g transform="translate(84 118)"><rect x="46" y="46" width="622.6666666666666" height="262" fill="none" stroke="#b3263a" stroke-width="1.5" /><rect x="680.6666666666666" y="46" width="305.3333333333333" height="262" fill="none" stroke="#1d1b17" stroke-width="1.5" /><rect x="46" y="320" width="305.3333333333333" height="262" fill="none" stroke="#1d1b17" stroke-width="1.5" stroke-dasharray="6 6"/><rect x="363.3333333333333" y="320" width="305.3333333333333" height="262" fill="none" stroke="#1d1b17" stroke-width="1.5" stroke-dasharray="6 6"/><rect x="680.6666666666666" y="320" width="305.3333333333333" height="262" fill="none" stroke="#1d1b17" stroke-width="1.5" stroke-dasharray="6 6"/><text x="65.38666666666667" y="177" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#b3263a">outil n°1</text><text x="382.72" y="451" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#8a8174">+ à venir</text></g>
+  <text x="84" y="824" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="44" fill="#1d1b17">MJTools</text>
+  <text x="1116" y="820" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="17" letter-spacing="1" fill="#8a8174">CAPTURE À VENIR · mjtools</text>
+</svg>

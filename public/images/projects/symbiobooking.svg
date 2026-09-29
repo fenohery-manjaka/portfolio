@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <rect width="1600" height="1000" fill="#e8e0d0"/>
+  <g fill="none" stroke="#1d1b17" stroke-width="1.5">
+    <rect x="112" y="112" width="1376" height="706" fill="#f2ede3"/>
+    <line x1="112" y1="146" x2="1488" y2="146"/>
+  </g>
+  <g fill="none" stroke="#1d1b17" stroke-width="1.2">
+    <circle cx="130" cy="129" r="5"/><circle cx="148" cy="129" r="5"/><circle cx="166" cy="129" r="5"/>
+  </g>
+  <g transform="translate(112 146)"><line x1="30" y1="30" x2="1346" y2="30" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="152.4" x2="1346" y2="152.4" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="274.8" x2="1346" y2="274.8" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="397.20000000000005" x2="1346" y2="397.20000000000005" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="519.6" x2="1346" y2="519.6" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="642" x2="1346" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="30" y1="30" x2="30" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="218" y1="30" x2="218" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="406" y1="30" x2="406" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="594" y1="30" x2="594" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="782" y1="30" x2="782" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="970" y1="30" x2="970" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="1158" y1="30" x2="1158" y2="642" stroke="#8a8174" stroke-width="1"/><line x1="1346" y1="30" x2="1346" y2="642" stroke="#8a8174" stroke-width="1"/><rect x="226" y="38" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="602" y="160.4" width="172" height="48.96000000000001" fill="#b3263a" opacity="1"/><rect x="790" y="160.4" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="38" y="282.8" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="978" y="282.8" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="414" y="405.20000000000005" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="1166" y="405.20000000000005" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/><rect x="602" y="527.6" width="172" height="48.96000000000001" fill="#1d1b17" opacity="0.75"/></g>
+  <text x="112" y="896" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="44" fill="#1d1b17">SymbioBooking</text>
+  <text x="1488" y="892" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="17" letter-spacing="1" fill="#8a8174">CAPTURE À VENIR · symbiobooking</text>
+</svg>
