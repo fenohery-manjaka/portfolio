@@ -29,7 +29,7 @@ Pour afficher un e-mail ou un profil LinkedIn, remplissez `contact.email` et `co
 
 | Image | Fichier |
 | --- | --- |
-| Photo de profil | `public/images/fenohery.webp` |
+| Photo (sticker détouré) | `public/images/fenohery-sticker.webp` |
 | SymbioMail | `public/images/projects/symbiomail.svg` |
 | SymbioBooking | `public/images/projects/symbiobooking.svg` |
 | SymbioProject | `public/images/projects/symbioproject.svg` |
@@ -41,23 +41,28 @@ Les images de projets sont **temporaires**. Pour mettre une vraie capture :
 2. changez la valeur `cover` du projet dans `src/content/profile.js`
    (`'images/projects/symbiomail.webp'`).
 
-Formats conseillés : 1600 × 1100 px pour SymbioMail, 1600 × 1000 px pour SymbioBooking et SymbioProject,
-1200 × 900 px pour MJTools. Pensez à flouter toute donnée client ou utilisateur avant publication.
+Format conseillé : 1600 × 1000 px (16:10) pour toutes les captures. Pensez à flouter toute donnée client ou utilisateur avant publication.
 
-Pour recadrer une nouvelle photo de profil : `node scripts/prepare-photo.mjs chemin/vers/photo.jpg`.
+Pour transformer une nouvelle photo (fond blanc ou transparent) en sticker :
+`node scripts/make-sticker.mjs chemin/vers/photo.png`.
 Pour regénérer les images temporaires : `node scripts/placeholders.mjs`.
 
 ## Structure
 
 ```
 src/
-  content/profile.js       tout le contenu éditable
+  content/profile.js       tout le contenu éditable (y compris la position des stickers)
   components/              une section = un composant
-    PluckString.vue        les filets « cordes pincées »
-  directives/reveal.js     apparition douce au scroll
-  style.css                palette, typographie, thème sombre
-public/images/             photo et captures
+    BugHunt.vue            la coccinelle à attraper
+    HatsSection.vue        l'interrupteur « deux casquettes »
+    ToolboxSection.vue     le laptop couvert de stickers
+  directives/drag.js       v-drag : rend un élément déplaçable
+  style.css                palette et typographies
+public/images/             sticker et captures
 ```
+
+Typographies : Bagel Fat One (titres), Kalam (annotations manuscrites),
+Atkinson Hyperlegible Next (texte).
 
 ## Publication
 

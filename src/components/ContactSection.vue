@@ -1,41 +1,46 @@
 <script setup>
 import { computed } from 'vue'
-import SectionHead from './SectionHead.vue'
-import { closing, contact } from '../content/profile.js'
+import { bugs } from '../stores/bugs.js'
+import { closing, contact, person } from '../content/profile.js'
 
-const channels = computed(() =>
+const buttons = computed(() =>
   [
-    contact.email && { label: 'E-mail', value: contact.email, href: `mailto:${contact.email}` },
-    contact.linkedin && {
-      label: 'LinkedIn',
-      value: contact.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''),
-      href: contact.linkedin,
-    },
-    contact.github && { label: 'GitHub', value: contact.githubLabel, href: contact.github },
+    contact.email && { label: `✉️ ${contact.email}`, href: `mailto:${contact.email}`, cls: 'bg-sun text-ink hover:bg-white' },
+    contact.linkedin && { label: 'LinkedIn ↗', href: contact.linkedin, cls: 'bg-azur text-ink hover:bg-white' },
+    { label: `GitHub · ${contact.githubLabel} ↗`, href: contact.github, cls: 'bg-white text-ink hover:bg-sun' },
   ].filter(Boolean),
 )
+const year = new Date().getFullYear()
 </script>
 
 <template>
-  <section id="contact" class="mx-auto max-w-6xl px-4 pt-24 pb-10 sm:px-6 md:pt-32 lg:px-10">
-    <SectionHead :label="closing.label" :title="closing.title" :intro="closing.text" />
+  <section id="contact" class="relative -mt-12 rounded-t-[3rem] bg-ink px-4 pt-20 pb-10 text-white sm:px-6 md:pt-28">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="font-display text-[clamp(4rem,14vw,10rem)] leading-[0.85]">
+        {{ closing.title.replace(' ?', '') }}<span class="text-cherry">&nbsp;?</span>
+      </h2>
+      <p class="mt-10 max-w-xl text-xl leading-relaxed text-white/85">{{ closing.text }}</p>
 
-    <ul class="mt-10 md:mt-14 md:ml-[25%] md:pl-2">
-      <li v-for="(c, i) in channels" :key="c.label" v-reveal="i * 70" class="border-t border-rule last:border-b">
+      <div class="mt-10 flex flex-wrap gap-3">
         <a
-          :href="c.href"
-          :target="c.href.startsWith('http') ? '_blank' : undefined"
-          :rel="c.href.startsWith('http') ? 'noopener' : undefined"
-          class="group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-5"
+          v-for="b in buttons"
+          :key="b.href"
+          :href="b.href"
+          :target="b.href.startsWith('http') ? '_blank' : undefined"
+          :rel="b.href.startsWith('http') ? 'noopener' : undefined"
+          class="btn !px-6 !py-4 !text-lg"
+          :class="b.cls"
         >
-          <span class="label">{{ c.label }}</span>
-          <span
-            class="text-[clamp(1.35rem,3.4vw,2.1rem)] break-all italic transition-colors duration-300 group-hover:text-carmine"
-          >
-            {{ c.value }} <span aria-hidden="true" class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </span>
+          {{ b.label }}
         </a>
-      </li>
-    </ul>
+      </div>
+
+      <footer class="mt-24 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {{ year }} {{ person.fullName }} · Fait avec Vue.js et Tailwind CSS</p>
+        <p class="font-hand text-base">
+          🐞 bugs écrasés sur ce site : <span class="font-bold text-sun">{{ bugs.squashed }}</span>
+        </p>
+      </footer>
+    </div>
   </section>
 </template>

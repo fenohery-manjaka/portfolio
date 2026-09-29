@@ -1,31 +1,28 @@
 <script setup>
+import BugHunt from './components/BugHunt.vue'
 import ContactSection from './components/ContactSection.vue'
+import HatsSection from './components/HatsSection.vue'
 import HeroSection from './components/HeroSection.vue'
-import MethodSection from './components/MethodSection.vue'
 import PathSection from './components/PathSection.vue'
-import PersonalSection from './components/PersonalSection.vue'
-import SiteFooter from './components/SiteFooter.vue'
-import SiteHeader from './components/SiteHeader.vue'
-import ToolsSection from './components/ToolsSection.vue'
+import SiteNav from './components/SiteNav.vue'
+import ToolboxSection from './components/ToolboxSection.vue'
 import WorkSection from './components/WorkSection.vue'
+import WorkshopSection from './components/WorkshopSection.vue'
 </script>
 
 <template>
-  <a
-    href="#travail"
-    class="label sr-only z-50 bg-paper px-3 py-2 focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
-  >
+  <a href="#travail" class="sr-only z-[80] rounded-full bg-white px-4 py-2 font-bold focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
     Aller au contenu
   </a>
-  <SiteHeader />
+  <SiteNav />
   <main>
     <HeroSection />
     <WorkSection />
-    <MethodSection />
-    <PersonalSection />
-    <ToolsSection />
+    <HatsSection />
+    <WorkshopSection />
+    <ToolboxSection />
     <PathSection />
     <ContactSection />
   </main>
-  <SiteFooter />
+  <BugHunt />
 </template>

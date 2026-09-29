@@ -1,48 +1,21 @@
 @import "tailwindcss";
 
 /*
- * Palette : papier chaud, encre, et un rouge carmin
- * pris directement sur la photo (le t-shirt).
+ * Palette : bleu ciel, rouge cerise (celui du t-shirt), jaune soleil,
+ * vert menthe et encre. Des couleurs franches, sans dégradés.
  */
-:root {
-  --paper: #f2ede3;
-  --paper-deep: #e8e0d0;
-  --ink: #1d1b17;
-  --ink-soft: #5a544b;
-  --rule: #cbc1ae;
-  --carmine: #b3263a;
-  --carmine-soft: #f0d9d4;
-  --print: #ffffff;
-  color-scheme: light;
-}
+@theme {
+  --color-azur: #8fd0ff;
+  --color-azur-deep: #4aa8f0;
+  --color-cherry: #d9253b;
+  --color-sun: #ffd23f;
+  --color-mint: #2ec98a;
+  --color-ink: #141414;
+  --color-cloud: #f3f6fa;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #17150f;
-    --paper-deep: #211e17;
-    --ink: #eee7d9;
-    --ink-soft: #a9a193;
-    --rule: #3a352b;
-    --carmine: #e7596b;
-    --carmine-soft: #3a1c1f;
-    --print: #ebebeb;
-    --photo-filter: brightness(0.92);
-    color-scheme: dark;
-  }
-}
-
-@theme inline {
-  --color-paper: var(--paper);
-  --color-paper-deep: var(--paper-deep);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-rule: var(--rule);
-  --color-carmine: var(--carmine);
-  --color-carmine-soft: var(--carmine-soft);
-  --color-print: var(--print);
-
-  --font-serif: "Newsreader Variable", "Newsreader", Georgia, "Times New Roman", serif;
-  --font-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --font-hand: "Kalam", "Comic Sans MS", cursive;
 }
 
 @layer base {
@@ -50,7 +23,6 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -58,76 +30,79 @@
   }
 
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-serif);
-    font-optical-sizing: auto;
-    text-rendering: optimizeLegibility;
+    background: var(--color-azur);
+    color: var(--color-ink);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  .photo {
-    filter: var(--photo-filter, none);
-  }
-
   ::selection {
-    background: var(--carmine);
-    color: var(--paper);
+    background: var(--color-sun);
+    color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--carmine);
+    outline: 3px solid var(--color-ink);
     outline-offset: 3px;
+    border-radius: 6px;
   }
 
   [id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 5.5rem;
   }
 }
 
 @layer components {
-  /* Petites étiquettes techniques, en mono. */
-  .label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    line-height: 1.4;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+  /* Gros bouton "pastille" */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: transform 0.2s cubic-bezier(0.3, 1.6, 0.6, 1), background-color 0.2s;
+  }
+  .btn:hover {
+    transform: translateY(-3px) rotate(-1.5deg);
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.97);
   }
 
-  /* Lien souligné qui se "remplit" au survol. */
-  .ink-link {
-    background-image: linear-gradient(var(--carmine), var(--carmine));
-    background-size: 100% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.35s ease, color 0.35s ease;
-  }
-  .ink-link:hover,
-  .ink-link:focus-visible {
-    background-size: 100% 100%;
-    color: var(--paper);
+  .chip {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 
-  /* Apparition douce au scroll (voir directives/reveal.js). */
-  .js .reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-    transition-delay: var(--reveal-delay, 0ms);
+  /* Ombre de sticker collé */
+  .stuck {
+    filter: drop-shadow(0 10px 14px rgb(20 20 20 / 0.22));
   }
-  .js .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+  .stuck.is-dragging {
+    filter: drop-shadow(0 24px 24px rgb(20 20 20 / 0.3));
+  }
+}
+
+@layer utilities {
+  .wiggle-hover:hover {
+    animation: wiggle 0.5s ease-in-out;
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(var(--r, 0deg)); }
+    25% { transform: rotate(calc(var(--r, 0deg) - 3deg)); }
+    75% { transform: rotate(calc(var(--r, 0deg) + 3deg)); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .js .reveal {
-      opacity: 1;
-      transform: none;
-      transition: none;
+    .wiggle-hover:hover {
+      animation: none;
     }
   }
 }

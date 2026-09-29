@@ -1,11 +1,13 @@
 import { createApp } from 'vue'
 
-import '@fontsource-variable/newsreader/opsz.css'
-import '@fontsource-variable/newsreader/opsz-italic.css'
-import '@fontsource/martian-mono/400.css'
+import '@fontsource/bagel-fat-one/latin-400.css'
+import '@fontsource/bagel-fat-one/latin-ext-400.css'
+import '@fontsource/kalam/latin-400.css'
+import '@fontsource/kalam/latin-700.css'
+import '@fontsource-variable/atkinson-hyperlegible-next/wght.css'
 import './style.css'
 
 import App from './App.vue'
-import { reveal } from './directives/reveal.js'
+import { drag } from './directives/drag.js'
 
-createApp(App).directive('reveal', reveal).mount('#app')
+createApp(App).directive('drag', drag).mount('#app')
