@@ -22,8 +22,8 @@ const shapes = {
   <section id="outils" class="relative -mt-12 rounded-t-[3rem] bg-sun px-4 pt-20 pb-28 sm:px-6 md:pt-28">
     <div class="mx-auto max-w-6xl">
       <div class="flex flex-wrap items-end justify-between gap-4">
-        <h2 class="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-[0.9]">{{ toolbox.title }}</h2>
-        <p class="flex items-end gap-1 font-hand text-2xl">
+        <h2 class="text-[clamp(2.4rem,6.5vw,4.4rem)] leading-[0.98] font-extrabold tracking-[-0.03em]">{{ toolbox.title }}</h2>
+        <p class="flex items-end gap-1 font-hand text-2xl pointer-coarse:hidden">
           {{ toolbox.hint }}
           <HandArrow variant="down" class="h-14 w-10" />
         </p>
@@ -42,7 +42,7 @@ const shapes = {
             <li
               v-for="s in toolbox.stickers"
               :key="s.label"
-              v-drag="{ rotate: s.r, bound: true }"
+              v-drag="{ rotate: s.r, bound: true, touch: false }"
               class="stuck absolute font-display text-[0.95rem] leading-tight sm:text-xl"
               :class="[colors[s.color], shapes[s.shape]]"
               :style="{ left: `${s.x}%`, top: `${s.y}%` }"

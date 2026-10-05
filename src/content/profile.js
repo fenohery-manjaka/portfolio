@@ -26,11 +26,16 @@ export const contact = {
 export const hero = {
   hello: 'Salut, moi c’est',
   lead:
-    'Développeur Full-Stack et superviseur technique chez SymbioTek. Je transforme des besoins en applications web qui marchent. Et quand ça casse, je débogue.',
-  tags: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'Ingénieur télécoms'],
+    'Développeur Full-Stack et superviseur technique chez SymbioTek. J’analyse des besoins, je les traduis en solutions techniques et je les développe de bout en bout. Et quand ça casse, je débogue.',
+  facts: ['SymbioTek depuis mai 2025', 'Laravel / Vue.js', 'Produits SaaS', 'Développement + supervision technique'],
+  scopeTitle: 'Ce que je prends en charge',
+  scope: [
+    ['Analyse fonctionnelle', 'traduction technique'],
+    ['Développement frontend et backend', 'logique métier et intégrations'],
+    ['Revue de code, réflexion technique', 'supervision'],
+  ],
   stickerNote: 'c’est moi !',
   dragHint: '(on peut me déplacer)',
-  bugHint: 'psst… un bug traîne quelque part sur ce site.',
 }
 
 export const work = {
@@ -43,7 +48,7 @@ export const work = {
     kind: 'SaaS · gestion et traitement intelligent des e-mails',
     role: 'Développement & évolution',
     cover: 'images/projects/symbiomail.svg',
-    coverAlt: 'Capture de SymbioMail (image temporaire)',
+    coverAlt: 'Illustration schématique de SymbioMail, en attendant une vraie capture',
     summary: [
       'Le produit sur lequel je suis le plus impliqué. Une application SaaS autour de la gestion et du traitement intelligent des e-mails.',
       'Je n’y écris pas seulement du code : j’analyse aussi des besoins fonctionnels et je réfléchis à leur traduction technique.',
@@ -56,26 +61,26 @@ export const work = {
       { title: 'Les rendre lisibles', items: ['Onboarding', 'Dashboard', 'Back-office', 'UX'] },
     ],
     footnote: 'Et tout le temps : debugging, maintenance, nouvelles fonctionnalités.',
+    // Mini étude de cas : s'affiche dès que `problem` est rempli.
+    // Uniquement ce qui peut être dit publiquement (aucune donnée client).
+    caseStudy: {
+      problem: '', // Un problème réel et difficile rencontré sur SymbioMail.
+      solution: '', // Ce que j'ai fait / décidé pour le résoudre.
+    },
   },
 
   projects: [
     {
       id: 'symbiobooking',
       name: 'SymbioBooking',
-      kind: 'Réservation',
+      kind: 'Produit de réservation',
       role: 'Développement · supervision technique',
       color: 'sun',
       cover: 'images/projects/symbiobooking.svg',
-      coverAlt: 'Capture de SymbioBooking (image temporaire)',
+      coverAlt: 'Illustration schématique de SymbioBooking, en attendant une vraie capture',
       summary:
-        'Un produit autour de la réservation. J’ai travaillé côté frontend comme backend, et je participe aujourd’hui à sa supervision technique.',
-      points: [
-        'Logique de réservation',
-        'Personnalisations autour de Booknetic',
-        'WhatsApp via Evolution API',
-        'Workflows et automatisations',
-        'Maintenance et évolution',
-      ],
+        'Logique de réservation construite autour de Booknetic et de ses personnalisations, intégration WhatsApp via Evolution API, workflows et automatisations. J’y ai travaillé côté frontend comme backend, et je participe aujourd’hui à sa supervision technique.',
+      points: ['Booknetic personnalisé', 'Evolution API (WhatsApp)', 'Automatisations', 'Maintenance et évolution'],
     },
     {
       id: 'symbioproject',
@@ -84,10 +89,10 @@ export const work = {
       role: 'Développement · évolution · supervision',
       color: 'azur',
       cover: 'images/projects/symbioproject.svg',
-      coverAlt: 'Capture de SymbioProject (image temporaire)',
+      coverAlt: 'Illustration schématique de SymbioProject, en attendant une vraie capture',
       summary:
-        'Un produit pour organiser et piloter des projets. J’ai participé à son développement, à son évolution et à sa supervision.',
-      points: ['Projets connectés à leurs repositories Git', 'Récupération et exploitation des commits', 'Suivi des projets'],
+        'Un produit pour organiser et piloter des projets. Les projets peuvent y être connectés à leurs repositories Git, pour récupérer les commits et les exploiter dans le suivi. J’ai participé à son développement, à son évolution et à sa supervision.',
+      points: ['Intégration Git', 'Exploitation des commits', 'Suivi de projets'],
     },
   ],
 
@@ -116,7 +121,7 @@ export const hats = {
       label: 'Superviseur',
       items: [
         { verb: 'Je relis', text: 'Revue de code et d’implémentations.' },
-        { verb: 'Je suis', text: 'Le suivi du travail technique. (Oui, « je suis » dans les deux sens.)' },
+        { verb: 'Je fais le suivi', text: 'Du travail technique, au fil des projets.' },
         { verb: 'Je supervise', text: 'D’autres développements, notamment sur SymbioBooking et SymbioProject.' },
         { verb: 'Je réfléchis', text: 'Architecture applicative et choix techniques.' },
       ],
@@ -130,7 +135,7 @@ export const workshop = {
     name: 'MJTools',
     kind: 'Projet personnel · en chantier',
     cover: 'images/projects/mjtools.svg',
-    coverAlt: 'Capture de MJTools (image temporaire)',
+    coverAlt: 'Illustration schématique de MJTools, en attendant une vraie capture',
     summary: [
       'Plusieurs outils dans un même ensemble, avec une architecture assez modulaire pour en ajouter de nouveaux au fil du temps.',
       'Premier outil en chantier : rapprocher le relevé d’un fournisseur avec ses propres données comptables. Import CSV ou XLSX, normalisation, rapprochement automatique, et seuls les cas douteux sont soumis à l’humain.',

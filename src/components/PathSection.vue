@@ -8,7 +8,7 @@ const tilts = [-2, 1.5, -1, 2]
 <template>
   <section id="parcours" class="relative -mt-12 rounded-t-[3rem] bg-azur px-4 pt-20 pb-28 sm:px-6 md:pt-28">
     <div class="mx-auto max-w-6xl">
-      <h2 class="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-[0.9]">{{ path.title }}</h2>
+      <h2 class="text-[clamp(2.4rem,6.5vw,4.4rem)] leading-[0.98] font-extrabold tracking-[-0.03em]">{{ path.title }}</h2>
       <p class="mt-2 font-hand text-2xl -rotate-1">{{ path.note }}</p>
 
       <ol class="relative mt-14 grid gap-6 md:grid-cols-4 md:gap-5">
@@ -27,7 +27,7 @@ const tilts = [-2, 1.5, -1, 2]
             class="absolute top-6 -left-12 h-6 w-6 rounded-full border-4 border-ink bg-white md:hidden"
             aria-hidden="true"
           ></span>
-          <p class="font-display text-3xl leading-none sm:text-4xl">{{ s.when }}</p>
+          <p class="text-3xl leading-none font-extrabold tracking-[-0.02em] sm:text-4xl">{{ s.when }}</p>
           <p class="mt-3 text-lg leading-tight font-extrabold">{{ s.what }}</p>
           <p class="mt-2 leading-relaxed opacity-90">{{ s.detail }}</p>
         </li>

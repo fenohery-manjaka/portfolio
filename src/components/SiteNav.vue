@@ -2,9 +2,9 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const links = [
-  { href: '#travail', label: 'Travail' },
-  { href: '#casquettes', label: 'Casquettes' },
-  { href: '#outils', label: 'Outils' },
+  { href: '#travail', label: 'Projets' },
+  { href: '#casquettes', label: 'Rôle' },
+  { href: '#outils', label: 'Stack' },
   { href: '#parcours', label: 'Parcours' },
 ]
 
@@ -56,7 +56,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
         class="mx-auto mt-2 max-w-5xl rounded-3xl bg-white p-3 shadow-[0_10px_30px_-12px_rgb(20_20_20/0.4)] md:hidden"
       >
         <li v-for="l in links" :key="l.href">
-          <a :href="l.href" class="block rounded-2xl px-4 py-3 font-display text-2xl hover:bg-azur" @click="open = false">
+          <a :href="l.href" class="block rounded-2xl px-4 py-3 text-2xl font-extrabold hover:bg-azur" @click="open = false">
             {{ l.label }}
           </a>
         </li>

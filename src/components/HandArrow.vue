@@ -17,6 +17,12 @@ const paths = {
     line: 'M20 6 C 60 20, 62 60, 38 98',
     head: 'M28 86 L37 100 L50 90',
   },
+  // d'en haut à droite vers le bas à gauche
+  downleft: {
+    viewBox: '0 0 90 80',
+    line: 'M82 8 C 62 4, 30 18, 20 66',
+    head: 'M10 54 L19 68 L32 58',
+  },
   // vers la gauche
   left: {
     viewBox: '0 0 130 60',

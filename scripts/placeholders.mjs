@@ -1,4 +1,4 @@
-// Génère les images temporaires des projets (public/images/projects/*.svg), format 16:10.
+// Génère les illustrations schématiques des projets (public/images/projects/*.svg), format 16:10.
 // Elles sont faites pour être remplacées par de vraies captures.
 import { writeFileSync } from 'node:fs'
 
@@ -10,10 +10,6 @@ const H = 1000
 const wrap = (name, accent, body) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="#ffffff"/>
   ${body(accent)}
-  <g transform="translate(${W - 90} ${H - 70})">
-    <rect x="-470" y="-44" width="470" height="64" rx="32" fill="${accent}"/>
-    <text x="-235" y="-2" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="700" font-size="28" fill="${accent === '#d9253b' ? '#fff' : INK}">${name} · capture à venir</text>
-  </g>
 </svg>
 `
 

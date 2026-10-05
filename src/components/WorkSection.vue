@@ -11,7 +11,7 @@ const cardBg = { sun: 'bg-sun', azur: 'bg-azur', mint: 'bg-mint', cherry: 'bg-ch
   <section id="travail" class="relative -mt-12 rounded-t-[3rem] bg-white px-4 pt-20 pb-28 sm:px-6 md:pt-28">
     <div class="mx-auto max-w-6xl">
       <header class="flex flex-wrap items-end gap-x-6 gap-y-2">
-        <h2 class="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-[0.9]">{{ work.title }}</h2>
+        <h2 class="text-[clamp(2.4rem,6.5vw,4.4rem)] leading-[0.98] font-extrabold tracking-[-0.03em]">{{ work.title }}</h2>
         <p class="flex items-center gap-1 pb-2 font-hand text-2xl text-cherry">
           <HandArrow variant="left" class="h-8 w-14" />
           {{ work.note }}
@@ -39,10 +39,9 @@ const cardBg = { sun: 'bg-sun', azur: 'bg-azur', mint: 'bg-mint', cherry: 'bg-ch
           <li
             v-for="(s, i) in f.streams"
             :key="s.title"
-            class="rotate-(--tilt) rounded-3xl bg-white p-5 text-ink transition duration-300 hover:-translate-y-1 hover:rotate-0"
-            :style="{ '--tilt': `${[-1.5, 1, -0.8, 1.6][i]}deg` }"
+            class="rounded-3xl bg-white p-5 text-ink"
           >
-            <span class="font-display text-4xl text-cherry">{{ i + 1 }}</span>
+            <span class="text-4xl font-extrabold text-cherry">{{ i + 1 }}</span>
             <h4 class="mt-1 text-lg leading-tight font-extrabold">{{ s.title }}</h4>
             <ul class="mt-3 space-y-1 text-[0.98rem]">
               <li v-for="item in s.items" :key="item">· {{ item }}</li>
@@ -50,6 +49,18 @@ const cardBg = { sun: 'bg-sun', azur: 'bg-azur', mint: 'bg-mint', cherry: 'bg-ch
           </li>
         </ol>
         <p class="mt-8 font-hand text-xl sm:text-2xl">{{ f.footnote }}</p>
+
+        <!-- Mini étude de cas (affichée quand le contenu est renseigné) -->
+        <div v-if="f.caseStudy?.problem" class="mt-10 grid gap-4 md:grid-cols-2">
+          <div class="rounded-3xl bg-ink p-6">
+            <p class="text-sm font-extrabold tracking-wide text-sun uppercase">Un problème difficile</p>
+            <p class="mt-3 text-lg leading-relaxed">{{ f.caseStudy.problem }}</p>
+          </div>
+          <div v-if="f.caseStudy.solution" class="rounded-3xl bg-white p-6 text-ink">
+            <p class="text-sm font-extrabold tracking-wide text-cherry uppercase">Ce que j’ai fait</p>
+            <p class="mt-3 text-lg leading-relaxed">{{ f.caseStudy.solution }}</p>
+          </div>
+        </div>
       </article>
 
       <!-- Autres produits -->
@@ -74,12 +85,11 @@ const cardBg = { sun: 'bg-sun', azur: 'bg-azur', mint: 'bg-mint', cherry: 'bg-ch
 
       <!-- Post-it -->
       <aside
-        v-drag="{ rotate: -3 }"
-        class="stuck relative mx-auto mt-14 w-72 bg-[#fff27a] px-6 pt-8 pb-7 sm:w-80"
+        class="stuck relative mx-auto mt-14 w-72 -rotate-3 bg-[#fff27a] px-6 pt-8 pb-7 sm:w-80"
         aria-label="Autre projet"
       >
         <span class="absolute -top-3 left-1/2 h-6 w-24 -translate-x-1/2 rotate-2 bg-white/70" aria-hidden="true"></span>
-        <p class="font-display text-3xl">{{ work.postIt.name }}</p>
+        <p class="text-3xl font-extrabold">{{ work.postIt.name }}</p>
         <p class="mt-2 font-hand text-xl leading-snug">{{ work.postIt.text }}</p>
       </aside>
     </div>

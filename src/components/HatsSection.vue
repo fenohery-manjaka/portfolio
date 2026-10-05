@@ -24,7 +24,7 @@ const capColor = computed(() => ({ dev: '#8fd0ff', lead: '#d9253b', both: '#ffd2
           <path d="M60 58 C 80 56, 104 58, 118 70 C 96 74, 70 70, 52 64 Z" :fill="capColor" stroke="#fff" stroke-width="4" class="transition-[fill] duration-500" />
           <circle cx="60" cy="9" r="5" fill="#fff" />
         </svg>
-        <h2 class="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-[0.9]">{{ hats.title }}</h2>
+        <h2 class="text-[clamp(2.4rem,6.5vw,4.4rem)] leading-[0.98] font-extrabold tracking-[-0.03em]">{{ hats.title }}</h2>
       </div>
       <p class="mt-5 max-w-2xl text-xl leading-relaxed text-white/85">{{ hats.intro }}</p>
 
@@ -62,7 +62,7 @@ const capColor = computed(() => ({ dev: '#8fd0ff', lead: '#d9253b', both: '#ffd2
           class="rounded-3xl p-6 sm:p-7"
           :class="it.hat === 'dev' ? 'bg-azur text-ink' : 'bg-cherry text-white'"
         >
-          <p class="font-display text-3xl sm:text-4xl">{{ it.verb }}</p>
+          <p class="text-2xl font-extrabold tracking-[-0.02em] sm:text-3xl">{{ it.verb }}</p>
           <p class="mt-2 text-lg leading-relaxed">{{ it.text }}</p>
         </li>
       </TransitionGroup>

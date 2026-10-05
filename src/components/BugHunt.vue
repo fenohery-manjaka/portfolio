@@ -7,18 +7,13 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import LadyBug from './LadyBug.vue'
 import { bugs } from '../stores/bugs.js'
 
-const MAX_BUGS = 5
-const FIRST_DELAY = 7000
+// Une seule apparition par visite : un easter egg, pas un mini-jeu.
+const MAX_BUGS = 1
+const FIRST_DELAY = 12000
 const NEXT_DELAY = 22000
 const SPEED = 85 // px/s
 
-const messages = [
-  'Bien vu ! Un bug de moins. C’est un peu mon métier, ça.',
-  'Et de deux. Vous avez l’œil.',
-  'Trois bugs ! On fait une revue de code ensemble ?',
-  'Quatre… vous êtes sûr·e de ne pas être développeur·se ?',
-  'Bon, je crois qu’il n’y en a plus. Pour l’instant.',
-]
+const messages = ['Bien vu ! Un bug de moins. C’est un peu mon métier, ça.']
 
 const bug = ref(null) // { x, y, angle, squashed }
 const toast = ref('')

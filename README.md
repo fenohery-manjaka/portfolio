@@ -35,7 +35,7 @@ Pour afficher un e-mail ou un profil LinkedIn, remplissez `contact.email` et `co
 | SymbioProject | `public/images/projects/symbioproject.svg` |
 | MJTools | `public/images/projects/mjtools.svg` |
 
-Les images de projets sont **temporaires**. Pour mettre une vraie capture :
+Les images de projets sont des **illustrations schématiques temporaires**. Pour mettre une vraie capture :
 
 1. déposez-la dans `public/images/projects/` (par exemple `symbiomail.webp`) ;
 2. changez la valeur `cover` du projet dans `src/content/profile.js`
@@ -61,8 +61,8 @@ src/
 public/images/             sticker et captures
 ```
 
-Typographies : Bagel Fat One (titres), Kalam (annotations manuscrites),
-Atkinson Hyperlegible Next (texte).
+Typographies : Bagel Fat One (nom et noms de projets), Kalam (annotations manuscrites),
+Atkinson Hyperlegible Next (titres de sections et texte).
 
 ## Publication
 

@@ -8,7 +8,7 @@ const p = workshop.project
 <template>
   <section id="atelier" class="relative -mt-12 rounded-t-[3rem] bg-mint px-4 pt-20 pb-28 sm:px-6 md:pt-28">
     <div class="mx-auto max-w-6xl">
-      <h2 class="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-[0.9]">{{ workshop.title }}</h2>
+      <h2 class="text-[clamp(2.4rem,6.5vw,4.4rem)] leading-[0.98] font-extrabold tracking-[-0.03em]">{{ workshop.title }}</h2>
 
       <div class="mt-12 grid items-start gap-12 md:grid-cols-2">
         <div class="relative">
